@@ -1,936 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARA Design - Better Treatments for Every Patient</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero .subtitle {
-            font-size: 1.8em;
-            max-width: 900px;
-            margin: 0 auto 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            font-size: 1.4em;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: 2.5em;
-            color: #667eea;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .problem-box {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 8px;
-        }
-
-        .problem-box h3 {
-            color: #856404;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .solution-box {
-            background: #d4edda;
-            border-left: 5px solid #28a745;
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 8px;
-        }
-
-        .solution-box h3 {
-            color: #155724;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .emphasis-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 50px;
-            margin: 60px 0;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .emphasis-box h3 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .emphasis-box p {
-            font-size: 1.4em;
-            line-height: 1.8;
-        }
-
-        .comparison {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .method-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .method-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .method-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .method-card.cara {
-            border: 3px solid #28a745;
-        }
-
-        .method-card.cara h3 {
-            color: #28a745;
-        }
-
-        .outcome-score {
-            font-size: 3.5em;
-            font-weight: bold;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .outcome-score.low {
-            color: #dc3545;
-        }
-
-        .outcome-score.high {
-            color: #28a745;
-        }
-
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .benefit-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .benefit-card h4 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-        }
-
-        .visual-comparison {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .bar-container {
-            margin: 30px 0;
-        }
-
-        .bar-label {
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .bar {
-            height: 50px;
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: width 1s ease;
-        }
-
-        .bar.traditional {
-            background: #dc3545;
-            width: 50%;
-        }
-
-        .bar.cara {
-            background: #28a745;
-            width: 63.1%;
-        }
-
-        .cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .cta h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            background: white;
-            color: #667eea;
-            padding: 18px 40px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: transform 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 3em;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .example-container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin: 40px 0;
-        }
-
-        .patient-card {
-            background: #f8f9fa;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            border-left: 5px solid #667eea;
-        }
-
-        .patient-profile {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            gap: 15px;
-        }
-
-        .patient-icon {
-            font-size: 2.5em;
-        }
-
-        .patient-info {
-            flex: 1;
-        }
-
-        .treatment-result {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .result-good {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .result-poor {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .arrow {
-            font-size: 2em;
-            text-align: center;
-            color: #667eea;
-            margin: 20px 0;
-        }
-
-        .comparison-visual {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .method-column {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .method-column h3 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-
-        .outcome-chart {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .chart-bars {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            height: 300px;
-            margin: 30px 0;
-        }
-
-        .chart-bar {
-            width: 30%;
-            background: linear-gradient(to top, #667eea, #764ba2);
-            border-radius: 8px 8px 0 0;
-            position: relative;
-            transition: height 1s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 20px;
-        }
-
-        .chart-bar.traditional {
-            height: 50%;
-            background: linear-gradient(to top, #dc3545, #ff6b7a);
-        }
-
-        .chart-bar.cara {
-            height: 63.1%;
-            background: linear-gradient(to top, #28a745, #5cb85c);
-        }
-
-        .chart-value {
-            color: white;
-            font-weight: bold;
-            font-size: 2em;
-        }
-
-        .chart-label {
-            position: absolute;
-            bottom: -35px;
-            width: 100%;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-
-        .value-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 5px solid #667eea;
-            transition: transform 0.3s;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .value-card h4 {
-            color: #667eea;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-
-        .value-card ul {
-            list-style-position: inside;
-            line-height: 1.8;
-        }
-
-        .thermometer-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            margin: 40px 0;
-            gap: 40px;
-        }
-
-        .thermometer {
-            width: 150px;
-            text-align: center;
-        }
-
-        .thermometer-bar {
-            width: 60px;
-            height: 400px;
-            background: #e0e0e0;
-            border-radius: 30px;
-            margin: 0 auto 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .thermometer-fill {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            border-radius: 30px;
-            transition: height 1.5s ease;
-        }
-
-        .thermometer-fill.traditional {
-            background: linear-gradient(to top, #dc3545, #ff6b7a);
-            height: 50%;
-        }
-
-        .thermometer-fill.cara {
-            background: linear-gradient(to top, #28a745, #5cb85c);
-            height: 63.1%;
-        }
-
-        .thermometer-label {
-            font-weight: 600;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .thermometer-value {
-            position: absolute;
-            top: 10px;
-            width: 100%;
-            color: white;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero .subtitle {
-                font-size: 1.3em;
-            }
-
-            .hero p {
-                font-size: 1.1em;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .comparison-visual {
-                grid-template-columns: 1fr;
-            }
-
-            .thermometer-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARA Design — Personalized Clinical Trials</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  color: #333;
+  background: #f8f9fa;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+h1, h2 {
+  text-align: center;
+  color: #4a56e2;
+}
+.subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* patient cards */
+.patient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.patient-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-top: 5px solid #667eea;
+}
+.patient-card.red {
+  border-top: 5px solid #e74c3c;
+}
+.patient-card.blue {
+  border-top: 5px solid #3498db;
+}
+.patient-card h3 {
+  margin-bottom: 10px;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.badge.red { background: #fdecea; color: #c0392b; }
+.badge.blue { background: #eaf2fd; color: #1e6ee2; }
+.patient-card p { margin: 6px 0; }
+.assigned {
+  color: #2c3e99;
+  font-weight: 700;
+  margin: 8px 0;
+}
+.response-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.response-item {
+  flex: 1;
+  background: #eee;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.response-item.active {
+  background: #27ae60;
+  color: white;
+}
+
+/* chart section */
+.chart-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin-top: 60px;
+}
+.chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 250px;
+  margin: 40px 0;
+}
+.bar {
+  width: 80px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  position: relative;
+}
+.bar.traditional {
+  background: linear-gradient(to top, #dc3545, #f87171);
+  height: 50%;
+}
+.bar.cara {
+  background: linear-gradient(to top, #28a745, #6dd47e);
+  height: 63%;
+}
+.bar-label {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+.note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #444;
+}
+</style>
 </head>
 <body>
-    <div class="hero">
-        <div class="subtitle">Clinical Trials Should Help, Not Just Test</div>
-        <h1>Every Patient Deserves Better Treatment</h1>
-        <p>Why settle for random chance when precision medicine can give you the right treatment? CARA Design ensures you get better care, even while participating in research.</p>
+
+<div class="container">
+  <h1>CARA Design for Continuous Outcomes</h1>
+  <p class="subtitle">How different patients are matched to treatments based on their biomarker profiles</p>
+
+  <div class="patient-grid">
+    <div class="patient-card red">
+      <h3>Patient Sarah</h3>
+      <div class="badge red">Biomarker A+</div>
+      <p>Age: 52, Stage II</p>
+      <p class="assigned">Assigned to: Treatment 1</p>
+      <p>Expected Mean Response:</p>
+      <div class="response-box">
+        <div class="response-item active">Treatment 1<br>75.2</div>
+        <div class="response-item">Treatment 2<br>48.5</div>
+      </div>
     </div>
 
-    <div class="emphasis-box" style="margin-top: 0;">
-        <h3>🎯 You Deserve Better Treatment During Clinical Trials</h3>
-        <p>Traditional trials treat you like a coin flip. CARA Design treats you like the unique individual you are — matching you with treatments most likely to work for YOUR specific characteristics.</p>
+    <div class="patient-card blue">
+      <h3>Patient Michael</h3>
+      <div class="badge blue">Biomarker A−</div>
+      <p>Age: 48, Stage II</p>
+      <p class="assigned">Assigned to: Treatment 2</p>
+      <p>Expected Mean Response:</p>
+      <div class="response-box">
+        <div class="response-item">Treatment 1<br>50.1</div>
+        <div class="response-item active">Treatment 2<br>73.8</div>
+      </div>
     </div>
 
-    <div class="container">
-        <div class="section">
-            <div class="problem-box">
-                <h3>🤔 The Traditional Approach</h3>
-                <p style="font-size: 1.2em;">In most clinical trials, treatments are assigned randomly — like flipping a coin. This means some patients receive treatments that aren't optimal for their unique characteristics, resulting in lower treatment responses.</p>
-                <p style="font-size: 1.2em; margin-top: 15px;"><strong>Average Treatment Response Score: 0.500</strong></p>
-                <p style="font-size: 1.1em; margin-top: 10px; color: #856404;">Your individual traits are ignored. You might get a treatment that works poorly for people like you.</p>
-            </div>
-
-            <div class="solution-box">
-                <h3>✨ The CARA Design Solution</h3>
-                <p style="font-size: 1.2em;">CARA (Covariate-Adjusted Response-Adaptive) Design learns from each patient and adapts in real-time. It considers your individual characteristics and previous results to match you with the treatment most likely to help <em>you</em>.</p>
-                <p style="font-size: 1.2em; margin-top: 15px;"><strong>Average Treatment Response Score: 0.631</strong> — 26% better outcomes!</p>
-                <p style="font-size: 1.1em; margin-top: 10px; color: #155724;">You get BETTER TREATMENT because the trial learns what works for people with your specific profile.</p>
-            </div>
-        </div>
-
-        <div class="emphasis-box">
-            <h3>💚 Clinical Trial Participation Shouldn't Mean Inferior Care</h3>
-            <p><strong>With CARA Design, you're not just contributing to science — you're receiving optimized treatment tailored to your individual needs.</strong></p>
-            <p style="margin-top: 20px;">Traditional trials: 50/50 chance of getting the right treatment<br>
-            <strong style="font-size: 1.3em;">CARA trials: Up to 68.7% chance of getting the better treatment for YOU</strong></p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">See The Difference in Treatment Outcomes</h2>
-            
-            <div class="thermometer-container">
-                <div class="thermometer">
-                    <div class="thermometer-label">Traditional<br>Random Design</div>
-                    <div class="thermometer-bar">
-                        <div class="thermometer-fill traditional">
-                            <div class="thermometer-value">0.500</div>
-                        </div>
-                    </div>
-                    <p style="color: #dc3545; font-weight: 600;">Lower Response</p>
-                </div>
-                
-                <div class="thermometer">
-                    <div class="thermometer-label">CARA<br>Adaptive Design</div>
-                    <div class="thermometer-bar">
-                        <div class="thermometer-fill cara">
-                            <div class="thermometer-value">0.631</div>
-                        </div>
-                    </div>
-                    <p style="color: #28a745; font-weight: 600;">Better Response</p>
-                </div>
-            </div>
-
-            <div style="background: #e3f2fd; padding: 30px; border-radius: 12px; margin-top: 40px;">
-                <p style="text-align: center; margin-top: 30px; font-size: 1.3em; color: #1565c0; font-weight: 600;">
-                    26% Better Treatment Outcomes with CARA Design
-                </p>
-                <p style="text-align: center; margin-top: 10px; font-size: 1.1em; color: #1565c0;">
-                    That means better health, faster recovery, and improved quality of life for patients
-                </p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">A Simple Example: How CARA Helps You</h2>
-            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; font-style: italic; color: #666;">
-                (This is a simplified illustration. Patient examples are for demonstration purposes.)
-            </p>
-            
-            <div class="example-container">
-                <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.6em;">Meet Sarah and John</h3>
-                
-                <div class="patient-card">
-                    <div class="patient-profile">
-                        <div class="patient-icon">👩</div>
-                        <div class="patient-info">
-                            <strong style="font-size: 1.3em;">Sarah, Age 45</strong>
-                            <p>Biomarker X: Positive | Health Profile Type: A</p>
-                        </div>
-                    </div>
-                    <p style="margin: 10px 0;"><strong>Traditional Trial:</strong> Randomly assigned to Treatment B (50% chance)</p>
-                    <span class="treatment-result result-poor">❌ Treatment Response Score: 0.35 — Poor outcome</span>
-                </div>
-
-                <div class="arrow">⬇️</div>
-
-                <div class="patient-card" style="border-left-color: #28a745;">
-                    <div class="patient-profile">
-                        <div class="patient-icon">👩</div>
-                        <div class="patient-info">
-                            <strong style="font-size: 1.3em;">Sarah, Age 45</strong>
-                            <p>Biomarker X: Positive | Health Profile Type: A</p>
-                        </div>
-                    </div>
-                    <p style="margin: 10px 0;"><strong>CARA Trial:</strong> System learned that patients with Biomarker X+ respond better to Treatment A</p>
-                    <p style="margin: 10px 0;">Sarah is matched to Treatment A (68.7% probability based on her profile)</p>
-                    <span class="treatment-result result-good">✅ Treatment Response Score: 0.75 — Excellent outcome!</span>
-                </div>
-
-                <div style="margin: 40px 0; padding: 30px; background: #fff3cd; border-radius: 8px; border-left: 5px solid #ffc107;">
-                    <h4 style="color: #856404; margin-bottom: 15px; font-size: 1.4em;">Sarah Gets Better Treatment With CARA</h4>
-                    <p style="font-size: 1.2em; line-height: 1.8; color: #856404;">
-                        Instead of leaving her care to chance, CARA recognizes her biomarker pattern and matches her with the treatment that works best for patients like her. She experiences better outcomes because the trial is designed to help her, not just study her.
-                    </p>
-                </div>
-
-                <div class="patient-card">
-                    <div class="patient-profile">
-                        <div class="patient-icon">👨</div>
-                        <div class="patient-info">
-                            <strong style="font-size: 1.3em;">John, Age 62</strong>
-                            <p>Biomarker X: Negative | Health Profile Type: B</p>
-                        </div>
-                    </div>
-                    <p style="margin: 10px 0;"><strong>Traditional Trial:</strong> Randomly assigned to Treatment A (50% chance)</p>
-                    <span class="treatment-result result-poor">❌ Treatment Response Score: 0.40 — Poor outcome</span>
-                </div>
-
-                <div class="arrow">⬇️</div>
-
-                <div class="patient-card" style="border-left-color: #28a745;">
-                    <div class="patient-profile">
-                        <div class="patient-icon">👨</div>
-                        <div class="patient-info">
-                            <strong style="font-size: 1.3em;">John, Age 62</strong>
-                            <p>Biomarker X: Negative | Health Profile Type: B</p>
-                        </div>
-                    </div>
-                    <p style="margin: 10px 0;"><strong>CARA Trial:</strong> System learned that patients with Biomarker X- respond better to Treatment B</p>
-                    <p style="margin: 10px 0;">John is matched to Treatment B (73.8% probability based on his profile)</p>
-                    <span class="treatment-result result-good">✅ Treatment Response Score: 0.82 — Excellent outcome!</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Real Results from Clinical Studies</h2>
-            
-            <div class="comparison">
-                <div class="method-card">
-                    <h3>Traditional Method</h3>
-                    <div class="outcome-score low">0.500</div>
-                    <p style="font-size: 1.1em; margin-bottom: 15px;">Average treatment response score</p>
-                    <p style="font-size: 1.1em;">Random assignment means many patients don't get optimal treatment for their individual characteristics</p>
-                </div>
-
-                <div class="method-card cara">
-                    <h3>🏆 CARA Design</h3>
-                    <div class="outcome-score high">0.631</div>
-                    <p style="font-size: 1.1em; margin-bottom: 15px;">Average treatment response score</p>
-                    <p style="font-size: 1.1em;">Personalized matching increases treatment effectiveness by 26% — that's significantly better health outcomes</p>
-                </div>
-            </div>
-
-            <div style="background: #e3f2fd; padding: 30px; border-radius: 12px; margin-top: 30px;">
-                <p style="font-size: 1.3em; text-align: center; color: #1565c0;">
-                    <strong>Real data from published research (Qiu & Hu, 2024):</strong> In studies with 400 patients, CARA Design increased average treatment response from 0.500 to 0.631 — helping patients achieve <span class="highlight">26% better outcomes</span>.
-                </p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Treatment Response Comparison</h2>
-            
-            <div class="outcome-chart">
-                <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em;">Average Treatment Response Scores from Published Research</h3>
-                
-                <div class="chart-bars">
-                    <div class="chart-bar traditional">
-                        <div class="chart-value">0.500</div>
-                        <div class="chart-label">Traditional<br>Random Design</div>
-                    </div>
-                    
-                    <div class="chart-bar cara">
-                        <div class="chart-value">0.631</div>
-                        <div class="chart-label">CARA<br>Adaptive Design</div>
-                    </div>
-                </div>
-
-                <p style="text-align: center; margin-top: 60px; font-size: 1.3em; color: #28a745; font-weight: 600;">
-                    +0.131 points = 26% better treatment outcomes
-                </p>
-                <p style="text-align: center; margin-top: 10px; font-size: 1.1em; color: #666;">
-                    Data from clinical trial simulations with 400 patients (Qiu & Hu, 2024)
-                </p>
-            </div>
-
-            <div class="visual-comparison">
-                <div class="bar-container">
-                    <div class="bar-label">Traditional Random Assignment: Average Response 0.500</div>
-                    <div class="bar traditional">50%</div>
-                </div>
-
-                <div class="bar-container">
-                    <div class="bar-label">CARA Adaptive Design: Average Response 0.631</div>
-                    <div class="bar cara">63.1%</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="emphasis-box">
-            <h3>🏥 Why This Matters for You</h3>
-            <p style="font-size: 1.3em;">Clinical trials are essential for medical progress, but you shouldn't have to sacrifice quality care to participate.</p>
-            <p style="font-size: 1.3em; margin-top: 20px;"><strong>CARA Design means you can contribute to science while receiving treatment optimized for your unique health profile.</strong></p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">How CARA Works (Simply Explained)</h2>
-            
-            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 3em; margin-bottom: 15px;">👤</div>
-                        <h4 style="color: #667eea; margin-bottom: 10px;">Step 1: Know You</h4>
-                        <p>We record your unique characteristics (age, biomarkers, health history)</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="font-size: 3em; margin-bottom: 15px;">📊</div>
-                        <h4 style="color: #667eea; margin-bottom: 10px;">Step 2: Learn</h4>
-                        <p>The system learns from previous patients with similar characteristics</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="font-size: 3em; margin-bottom: 15px;">🎯</div>
-                        <h4 style="color: #667eea; margin-bottom: 10px;">Step 3: Match</h4>
-                        <p>You're more likely to receive the treatment that works best for people like you</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="font-size: 3em; margin-bottom: 15px;">🔄</div>
-                        <h4 style="color: #667eea; margin-bottom: 10px;">Step 4: Adapt</h4>
-                        <p>The trial keeps learning and improving as more patients participate</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Benefits for Everyone</h2>
-            
-            <div class="benefits">
-                <div class="benefit-card">
-                    <h4>👨‍👩‍👧‍👦 For Patients</h4>
-                    <p>Receive better, personalized treatment during your trial participation — not random assignment</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h4>🏥 For Pharmaceutical Companies</h4>
-                    <p>Higher success rates, faster approvals, and better ROI on clinical development</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h4>⚕️ For Healthcare</h4>
-                    <p>More reliable data on which treatments work for which patients</p>
-                </div>
-
-                <div class="benefit-card">
-                    <h4>🌍 For Society</h4>
-                    <p>Accelerated drug development means life-saving treatments reach patients sooner</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Exceptional Value for Pharmaceutical Companies</h2>
-            
-            <div class="stat-grid">
-                <div class="stat-box">
-                    <div class="stat-number">+26%</div>
-                    <p>Better Treatment Outcomes</p>
-                </div>
-
-                <div class="stat-box">
-                    <div class="stat-number">30-50%</div>
-                    <p>Faster Patient Recruitment</p>
-                </div>
-
-                <div class="stat-box">
-                    <div class="stat-number">20-40%</div>
-                    <p>Reduced Sample Size Needed</p>
-                </div>
-
-                <div class="stat-box">
-                    <div class="stat-number">2-3x</div>
-                    <p>Higher Regulatory Success</p>
-                </div>
-            </div>
-
-            <div class="value-grid">
-                <div class="value-card">
-                    <h4>💰 Cost Savings</h4>
-                    <ul>
-                        <li>Smaller sample sizes reduce per-patient costs</li>
-                        <li>Faster trials mean lower operational expenses</li>
-                        <li>Fewer failed trials save millions in development costs</li>
-                        <li>Early identification of non-responders prevents waste</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <h4>⚡ Speed to Market</h4>
-                    <ul>
-                        <li>Adaptive design identifies winners faster</li>
-                        <li>Higher recruitment rates from better patient outcomes</li>
-                        <li>Reduced trial duration by 6-18 months</li>
-                        <li>Earlier patent protection and revenue generation</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <h4>📊 Superior Data Quality</h4>
-                    <ul>
-                        <li>Better patient retention due to improved outcomes</li>
-                        <li>More precise treatment effect estimates</li>
-                        <li>Stronger evidence for regulatory submissions</li>
-                        <li>Clear identification of responder populations</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <h4>🎯 Competitive Advantage</h4>
-                    <ul>
-                        <li>Demonstrate patient-centric innovation</li>
-                        <li>Attract top clinical investigators</li>
-                        <li>Enhanced reputation with regulators</li>
-                        <li>Differentiation from competitors</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <h4>✅ Regulatory Benefits</h4>
-                    <ul>
-                        <li>FDA encourages innovative adaptive designs</li>
-                        <li>Stronger efficacy signals improve approval odds</li>
-                        <li>Better safety profiles from matched treatments</li>
-                        <li>Potential for accelerated approval pathways</li>
-                    </ul>
-                </div>
-
-                <div class="value-card">
-                    <h4>💼 Business Impact</h4>
-                    <ul>
-                        <li>Higher NPV of drug development portfolio</li>
-                        <li>Better resource allocation across programs</li>
-                        <li>Improved investor confidence and valuation</li>
-                        <li>Foundation for precision medicine strategy</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 40px;">
-                <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.8em; text-align: center;">Real ROI Example</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                    <div style="padding: 30px; background: #fff3cd; border-radius: 8px;">
-                        <h4 style="color: #856404; margin-bottom: 15px; font-size: 1.4em;">Traditional Trial</h4>
-                        <ul style="font-size: 1.1em; line-height: 2;">
-                            <li>Sample size: 400 patients</li>
-                            <li>Cost per patient: $50,000</li>
-                            <li>Duration: 24 months</li>
-                            <li>Success probability: 40%</li>
-                            <li><strong>Total cost: $20M</strong></li>
-                        </ul>
-                    </div>
-                    <div style="padding: 30px; background: #d4edda; border-radius: 8px;">
-                        <h4 style="color: #155724; margin-bottom: 15px; font-size: 1.4em;">CARA Trial</h4>
-                        <ul style="font-size: 1.1em; line-height: 2;">
-                            <li>Sample size: 280 patients (-30%)</li>
-                            <li>Cost per patient: $50,000</li>
-                            <li>Duration: 18 months (-25%)</li>
-                            <li>Success probability: 65%</li>
-                            <li><strong>Total cost: $14M</strong></li>
-                        </ul>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 30px; font-size: 1.4em; color: #28a745; font-weight: 600;">
-                    Savings: $6M per trial + 6 months faster to market + 25% higher approval probability
-                </p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">FDA-Supported Innovation</h2>
-            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
-                <p style="font-size: 1.3em; line-height: 1.8;">
-                    Adaptive clinical trial designs like CARA are <strong>supported by the FDA</strong> as part of their Complex Innovative Trial Designs guidance (2020). These methods represent the future of precision medicine, combining scientific rigor with ethical patient care.
-                </p>
-                <p style="font-size: 1.2em; margin-top: 20px; color: #667eea;">
-                    "Adaptive designs can make clinical trials more flexible and efficient while maintaining scientific validity." — FDA Guidance
-                </p>
-            </div>
-        </div>
+    <div class="patient-card red">
+      <h3>Patient Elena</h3>
+      <div class="badge red">Biomarker A+</div>
+      <p>Age: 61, Stage III</p>
+      <p class="assigned">Assigned to: Treatment 1</p>
+      <p>Expected Mean Response:</p>
+      <div class="response-box">
+        <div class="response-item active">Treatment 1<br>70.8</div>
+        <div class="response-item">Treatment 2<br>45.6</div>
+      </div>
     </div>
 
-    <div class="cta">
-        <h2>Ready to Transform Your Clinical Trials?</h2>
-        <p style="font-size: 1.3em; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
-            Join leading pharmaceutical companies in adopting CARA Design. Better outcomes for patients. Faster approvals and better ROI for your business. It's precision medicine in action.
-        </p>
-        <button class="cta-button" onclick="alert('Contact your clinical development team to learn more about implementing CARA Design in your trials.')">Learn More About CARA</button>
+    <div class="patient-card blue">
+      <h3>Patient James</h3>
+      <div class="badge blue">Biomarker A−</div>
+      <p>Age: 55, Stage I</p>
+      <p class="assigned">Assigned to: Treatment 2</p>
+      <p>Expected Mean Response:</p>
+      <div class="response-box">
+        <div class="response-item">Treatment 1<br>47.9</div>
+        <div class="response-item active">Treatment 2<br>74.2</div>
+      </div>
     </div>
+  </div>
+
+  <div class="chart-section">
+    <h2>Average Continuous Response Comparison</h2>
+    <div class="chart">
+      <div class="bar traditional">
+        <span>0.500</span>
+        <div class="bar-label">Traditional Design</div>
+      </div>
+      <div class="bar cara">
+        <span>0.631</span>
+        <div class="bar-label">CARA Design</div>
+      </div>
+    </div>
+    <p class="note"><strong>26% higher mean response</strong> observed under CARA Design (based on continuous outcome simulations).</p>
+  </div>
+</div>
 
 </body>
 </html>
