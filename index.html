@@ -187,7 +187,7 @@
 
         .bar.cara {
             background: #28a745;
-            width: 63%;
+            width: 63.1%;
         }
 
         .cta {
@@ -247,6 +247,157 @@
             border-radius: 4px;
         }
 
+        .example-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+
+        .patient-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+
+        .patient-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .patient-icon {
+            font-size: 2.5em;
+        }
+
+        .patient-info {
+            flex: 1;
+        }
+
+        .treatment-result {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .result-good {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .result-poor {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .arrow {
+            font-size: 2em;
+            text-align: center;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .comparison-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .method-column {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .method-column h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .patient-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .patient-dot {
+            width: 100%;
+            padding-bottom: 100%;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .patient-dot.success {
+            background: #28a745;
+        }
+
+        .patient-dot.failure {
+            background: #dc3545;
+        }
+
+        .outcome-chart {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            margin: 30px 0;
+        }
+
+        .chart-bar {
+            width: 30%;
+            background: linear-gradient(to top, #667eea, #764ba2);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: height 1s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .chart-bar.traditional {
+            height: 50%;
+            background: linear-gradient(to top, #dc3545, #ff6b7a);
+        }
+
+        .chart-bar.cara {
+            height: 63.1%;
+            background: linear-gradient(to top, #28a745, #5cb85c);
+        }
+
+        .chart-value {
+            color: white;
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -35px;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
@@ -258,6 +409,10 @@
 
             .section-title {
                 font-size: 2em;
+            }
+
+            .comparison-visual {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -279,16 +434,359 @@
             <div class="solution-box">
                 <h3>✨ The CARA Design Solution</h3>
                 <p style="font-size: 1.2em;">CARA (Covariate-Adjusted Response-Adaptive) Design learns from each patient and adapts in real-time. It considers your individual characteristics and previous results to match you with the treatment most likely to help <em>you</em>.</p>
-                <p style="font-size: 1.2em; margin-top: 15px;"><strong>Success Rate: Up to 63%</strong> — a 26% improvement!</p>
+                <p style="font-size: 1.2em; margin-top: 15px;"><strong>Success Rate: Up to 63.1%</strong> — a 13.1% absolute improvement!</p>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">See The Difference</h2>
+            <h2 class="section-title">A Simple Example: How CARA Works</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; font-style: italic; color: #666;">
+                (This is a simplified illustration for understanding. Numbers shown are for demonstration purposes.)
+            </p>
             
-            <div class="visual-comparison">
-                <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em;">Patient Success Rates</h3>
+            <div class="example-container">
+                <h3 style="color: #667eea; margin-bottom: 20px; font-size: 1.6em;">Meet Sarah and John</h3>
                 
+                <div class="patient-card">
+                    <div class="patient-profile">
+                        <div class="patient-icon">👩</div>
+                        <div class="patient-info">
+                            <strong style="font-size: 1.3em;">Sarah, Age 45</strong>
+                            <p>Biomarker X: Positive | Previous health history: Type A</p>
+                        </div>
+                    </div>
+                    <p style="margin: 10px 0;"><strong>Traditional Trial:</strong> Randomly assigned to Treatment B (50% chance)</p>
+                    <span class="treatment-result result-poor">❌ Poor Response - Not ideal for her biomarker</span>
+                </div>
+
+                <div class="arrow">⬇️</div>
+
+                <div class="patient-card" style="border-left-color: #28a745;">
+                    <div class="patient-profile">
+                        <div class="patient-icon">👩</div>
+                        <div class="patient-info">
+                            <strong style="font-size: 1.3em;">Sarah, Age 45</strong>
+                            <p>Biomarker X: Positive | Previous health history: Type A</p>
+                        </div>
+                    </div>
+                    <p style="margin: 10px 0;"><strong>CARA Trial:</strong> System learned that patients with Biomarker X respond better to Treatment A</p>
+                    <p style="margin: 10px 0;">Sarah is assigned to Treatment A (68.7% probability based on her characteristics)</p>
+                    <span class="treatment-result result-good">✅ Excellent Response - Matched to her profile</span>
+                </div>
+
+                <div style="margin: 40px 0; padding: 30px; background: #e3f2fd; border-radius: 8px;">
+                    <h4 style="color: #1565c0; margin-bottom: 15px; font-size: 1.4em;">The Key Difference</h4>
+                    <p style="font-size: 1.2em; line-height: 1.8;">
+                        <strong>Traditional:</strong> Treatment assignment ignores patient characteristics → 50-50 chance<br>
+                        <strong>CARA:</strong> Treatment assignment adapts based on what's working for similar patients → Higher success rate
+                    </p>
+                </div>
+
+                <div class="patient-card">
+                    <div class="patient-profile">
+                        <div class="patient-icon">👨</div>
+                        <div class="patient-info">
+                            <strong style="font-size: 1.3em;">John, Age 62</strong>
+                            <p>Biomarker X: Negative | Previous health history: Type B</p>
+                        </div>
+                    </div>
+                    <p style="margin: 10px 0;"><strong>Traditional Trial:</strong> Randomly assigned to Treatment A (50% chance)</p>
+                    <span class="treatment-result result-poor">❌ Poor Response - Not ideal for his profile</span>
+                </div>
+
+                <div class="arrow">⬇️</div>
+
+                <div class="patient-card" style="border-left-color: #28a745;">
+                    <div class="patient-profile">
+                        <div class="patient-icon">👨</div>
+                        <div class="patient-info">
+                            <strong style="font-size: 1.3em;">John, Age 62</strong>
+                            <p>Biomarker X: Negative | Previous health history: Type B</p>
+                        </div>
+                    </div>
+                    <p style="margin: 10px 0;"><strong>CARA Trial:</strong> System learned that patients with Biomarker X negative respond better to Treatment B</p>
+                    <p style="margin: 10px 0;">John is assigned to Treatment B (73.8% probability based on his characteristics)</p>
+                    <span class="treatment-result result-good">✅ Excellent Response - Matched to his profile</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Visual Impact: 100 Patients</h2>
+            
+            <div class="comparison-visual">
+                <div class="method-column">
+                    <h3 style="color: #dc3545;">Traditional Random Design</h3>
+                    <div class="patient-grid">
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                    </div>
+                    <p style="text-align: center; font-size: 1.3em; color: #dc3545; font-weight: bold; margin-top: 20px;">
+                        50 patients helped ✓
+                    </p>
+                </div>
+
+                <div class="method-column" style="border: 3px solid #28a745;">
+                    <h3 style="color: #28a745;">CARA Adaptive Design</h3>
+                    <div class="patient-grid">
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                        <div class="patient-dot failure" title="Failure"></div>
+                        <div class="patient-dot success" title="Success"></div>
+                    </div>
+                    <p style="text-align: center; font-size: 1.3em; color: #28a745; font-weight: bold; margin-top: 20px;">
+                        63 patients helped ✓
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: #e3f2fd; padding: 30px; border-radius: 12px; margin-top: 30px;">
+                <p style="font-size: 1.3em; text-align: center; color: #1565c0;">
+                    <strong>🎯 13 More Lives Improved Per 100 Patients</strong><br>
+                    <span style="font-size: 0.9em;">Green dots = Successful treatment outcomes | Red dots = Poor outcomes</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Success Rate Comparison</h2>
+            
+            <div class="outcome-chart">
+                <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.8em;">Treatment Success Rates from Published Research</h3>
+                
+                <div class="chart-bars">
+                    <div class="chart-bar traditional">
+                        <div class="chart-value">50%</div>
+                        <div class="chart-label">Traditional<br>Random Design</div>
+                    </div>
+                    
+                    <div class="chart-bar cara">
+                        <div class="chart-value">63.1%</div>
+                        <div class="chart-label">CARA<br>Adaptive Design</div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 60px; font-size: 1.3em; color: #28a745; font-weight: 600;">
+                    +13.1 percentage points = 26% relative improvement
+                </p>
+                <p style="text-align: center; margin-top: 10px; font-size: 1.1em; color: #666;">
+                    Data from clinical trial simulations with 400 patients (Qiu & Hu, 2024)
+                </p>
+            </div>
+
+            <div class="visual-comparison">
                 <div class="bar-container">
                     <div class="bar-label">Traditional Random Assignment</div>
                     <div class="bar traditional">50.0%</div>
@@ -298,10 +796,6 @@
                     <div class="bar-label">CARA Adaptive Design</div>
                     <div class="bar cara">63.1%</div>
                 </div>
-
-                <p style="text-align: center; margin-top: 30px; font-size: 1.2em; color: #28a745; font-weight: 600;">
-                    That's 13 more patients helped out of every 100!
-                </p>
             </div>
         </div>
 
@@ -338,30 +832,6 @@
         </div>
 
         <div class="section">
-            <h2 class="section-title">Real Results from Clinical Studies</h2>
-            
-            <div class="comparison">
-                <div class="method-card">
-                    <h3>Traditional Method</h3>
-                    <div class="success-rate low">50%</div>
-                    <p style="font-size: 1.1em;">Random assignment means half of patients don't get the optimal treatment</p>
-                </div>
-
-                <div class="method-card cara">
-                    <h3>🏆 CARA Design</h3>
-                    <div class="success-rate high">63%</div>
-                    <p style="font-size: 1.1em;">Personalized matching increases success by 26% — that's thousands more lives improved</p>
-                </div>
-            </div>
-
-            <div style="background: #e3f2fd; padding: 30px; border-radius: 12px; margin-top: 30px;">
-                <p style="font-size: 1.3em; text-align: center; color: #1565c0;">
-                    <strong>Real data from published research:</strong> In studies with 400 patients, CARA Design increased treatment success from an average of 0.500 to 0.631 — helping <span class="highlight">26% more patients</span> achieve positive outcomes.
-                </p>
-            </div>
-        </div>
-
-        <div class="section">
             <h2 class="section-title">Benefits for Everyone</h2>
             
             <div class="benefits">
@@ -392,7 +862,7 @@
             
             <div class="stat-grid">
                 <div class="stat-box">
-                    <div class="stat-number">26%</div>
+                    <div class="stat-number">+13.1%</div>
                     <p>Higher Success Rate</p>
                 </div>
 
@@ -439,8 +909,3 @@
         <p style="font-size: 1.3em; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
             Join leading pharmaceutical companies in adopting CARA Design. Better outcomes for patients. Better results for your business.
         </p>
-        <button class="cta-button" onclick="alert('Contact your clinical development team to learn more about implementing CARA Design in your trials.')">Learn More About CARA</button>
-    </div>
-
-</body>
-</html>
